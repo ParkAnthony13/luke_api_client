@@ -19,12 +19,13 @@ const Results = props => {
             .then(response => {
                 setPeople(response.data)
                 console.log(response.data)
+                setError(false)
             })
             .catch(err => {
                 console.log(`Encountered Error: ${err}`)
                 setError(true)
             })
-    }, [])
+    }, [error])
 
     useEffect(() => {
         console.log("Home Finder")
@@ -32,6 +33,7 @@ const Results = props => {
             .then(response => {
                 setHome(response.data)
                 console.log(response.data)
+                setErrorHome(false)
             })
             .catch(err => {
                 console.log(`Encountered Error: ${err}`)

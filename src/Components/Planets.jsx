@@ -17,12 +17,13 @@ const Planets = props => {
             .then(response => {
                 setPlanets(response.data)
                 console.log(response.data)
+                setError(false)
             })
             .catch(err => {
                 console.log(`Encountered Error: ${err}`)
                 setError(true)
             })
-    }, [])
+    }, [error])
 
     return (
         <div>
